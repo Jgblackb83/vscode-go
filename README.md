@@ -8,6 +8,10 @@
 provides rich language support for the
 [Go programming language](https://golang.org/).
 
+> 📣 Gopls, the official Go language server, is now enabled in VS Code by default.
+> Gopls replaces several legacy tools to provide IDE features while editing Go code.
+> See [issue 1037](https://github.com/golang/vscode-go/issues/1037) for more information.
+
 ## Quick Start
 
 Welcome! 👋🏻<br/>

@@ -1,6 +1,7 @@
 {
   "name": "go",
   "displayName": "Go",
+  "version": "0.25.0",
   "version": "0.26.0-dev",
   "preview": true,
   "publisher": "golang",
@@ -132,15 +133,6 @@
         ],
         "aliases": [
           "Go Checksum File"
-        ]
-      },
-      {
-        "id": "tmpl",
-        "extensions": [
-          ".tmpl"
-        ],
-        "aliases": [
-          "Go Template File"
         ]
       }
     ],

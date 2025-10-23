@@ -199,6 +199,7 @@ export class DelveDAPOutputAdapter extends ProxyDebugAdapter {
 	private dlvDapServer: ChildProcess;
 	private port: number;
 	private socket: net.Socket;
+	private terminatedOnError = false;
 
 	protected async sendMessageToServer(message: vscode.DebugProtocolMessage): Promise<void> {
 		super.sendMessageToServer(message);
