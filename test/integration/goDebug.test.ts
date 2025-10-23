@@ -1596,10 +1596,9 @@ const testAll = (ctx: Mocha.Context, isDlvDap: boolean) => {
 				assert.fail(`debug output ${OUTPUT} wasn't built: ${e}`);
 			}
 
-			// It's possible dlv-dap doesn't respond. So, don't wait.
-			dc.disconnectRequest({ restart: false });
-			await sleep(10);
-			dlvDapAdapter.dispose(1);
+			// Skip the proper disconnect sequence started with a disconnect request.
+
+			await dlvDapAdapter.dispose(1);
 			dc = undefined;
 			await sleep(100); // allow dlv to respond and finish cleanup.
 			let stat: fs.Stats = null;

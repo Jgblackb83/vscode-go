@@ -213,7 +213,7 @@ export class DelveDAPOutputAdapter extends ProxyDebugAdapter {
 			return;
 		}
 
-		if (timeoutMS === undefined) {
+		if (timeoutMS === undefined || timeoutMS < 0) {
 			timeoutMS = 1_000;
 		}
 		const dlvDapServer = this.dlvDapServer;
@@ -231,7 +231,6 @@ export class DelveDAPOutputAdapter extends ProxyDebugAdapter {
 			const exitTimeoutToken = setTimeout(() => {
 				this.logger?.error(`dlv dap process (${dlvDapServer.pid}) isn't responding. Killing...`);
 				dlvDapServer.kill('SIGINT'); // Don't use treekill but let dlv handle cleaning up the child processes.
-				resolve();
 			}, timeoutMS);
 			dlvDapServer.on('exit', (code, signal) => {
 				clearTimeout(exitTimeoutToken);
